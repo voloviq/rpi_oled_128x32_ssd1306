@@ -114,6 +114,9 @@ int main(int argc, char **argv)
     digitalWrite(LED_RED, HIGH);
     digitalWrite(LED_GREEN, LOW);
 
+    bcm2835_gpio_fsel(I2C_SCL, BCM2835_GPIO_FSEL_ALT0);
+    bcm2835_gpio_fsel(I2C_SDA, BCM2835_GPIO_FSEL_ALT0);
+
 
     /* Start modem thread */
     x = piThreadCreate(thread_led_red);
