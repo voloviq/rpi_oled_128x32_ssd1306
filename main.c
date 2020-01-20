@@ -24,11 +24,9 @@
 #include <time.h>
 
 #include <wiringPi.h>
-#include <wiringSerial.h>
+#include <wiringPiI2C.h>
 
-int fd_mdm;
-int fd_gps;
-int errno;
+#include "oled.h"
 
 #define LED_RED         21
 #define LED_GREEN       25
@@ -97,6 +95,7 @@ int main(int argc, char **argv)
 {
     int x;
     char buffer[100];
+    int fd;
 
     struct tm *timeinfo ;
     time_t rawtime ;
@@ -114,9 +113,9 @@ int main(int argc, char **argv)
     digitalWrite(LED_RED, HIGH);
     digitalWrite(LED_GREEN, LOW);
 
-    bcm2835_gpio_fsel(I2C_SCL, BCM2835_GPIO_FSEL_ALT0);
-    bcm2835_gpio_fsel(I2C_SDA, BCM2835_GPIO_FSEL_ALT0);
+    fd = wiringPiI2CSetup(OLED_I2C_ADDRESS);
 
+    oled_init(fd);
 
     /* Start modem thread */
     x = piThreadCreate(thread_led_red);

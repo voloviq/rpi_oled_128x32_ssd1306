@@ -29,7 +29,7 @@ sudo apt-get install -y i2c-tools
 If only oled display is connected to I2C bus answer should look like
 
 0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f <br>
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- <br>
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- <br>
 10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- <br>
 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- <br>
 30: -- -- -- -- -- -- -- -- -- -- -- -- 3c -- -- -- <br>
@@ -37,3 +37,7 @@ If only oled display is connected to I2C bus answer should look like
 50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- <br>
 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- <br>
 70: -- -- -- -- -- -- -- -- <br>
+
+### NOTE
+
+Code is not ready yet, c code related with display is still in development
