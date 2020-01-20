@@ -20,11 +20,11 @@ First thing to do is to check if oled display is present on I2C buf
 
 issue following command into a terminal
 
-i2cdetect -y 0
+**i2cdetect -y 0**
 
 if i2cdetect is not installed issue
 
-sudo apt-get install -y i2c-tools
+**sudo apt-get install -y i2c-tools**
 
 If only oled display is connected to I2C bus answer should look like
 
